@@ -38,4 +38,8 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.deleteAll();
     }
 
+    @Override
+    public Long count() {
+        return studentRepository.count();
+    }
 }

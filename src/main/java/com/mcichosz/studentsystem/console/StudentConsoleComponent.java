@@ -18,16 +18,20 @@ public class StudentConsoleComponent implements CommandLineRunner {
         this.repository = repository;
     }
 
-
     @Autowired
     private StudentService studentService;
 
     @Override
     public void run(String... args) throws Exception {
         try {
-            // insertStudents();
-            //retrieveStudentsStats();
-            deleteAll();
+            Long count_ = studentService.count();
+            log.info("-----------count={}",count_);
+            if (count_!=10) {
+                studentService.deleteAll();
+                insertStudents();
+                retrieveStudentsStats();
+            }
+
         } catch (Exception exception) {
             log.error(exception.getMessage());
             throw new Exception("");
@@ -37,20 +41,17 @@ public class StudentConsoleComponent implements CommandLineRunner {
     private void insertStudents() {
         Student student = new Student();
 
-        for (long i = 0; i < 100; i++) {
+        for (long i = 0; i < 10; i++) {
             student.setId(i);
-            student.setAddress("SuperAwesomeTitle_" + i);
-            student.setName("MCF7_" + i);
+            student.setAddress("Student" + i);
+            student.setName("Name_" + i);
             studentService.saveStudent(student);
         }
         log.info("Test ------------");
-        //repository.save(student);
+
     }
     private void retrieveStudentsStats() {
         log.info("max={}, min={}",studentService.max(), studentService.min());
     }
 
-    private void deleteAll() {
-        studentService.deleteAll();
-    }
 }

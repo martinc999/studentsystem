@@ -8,8 +8,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
     @Query(value = "SELECT min(id) FROM Student")
-    public Long min();
+    Long min();
 
     @Query(value = "SELECT max(id) FROM Student")
-    public Long max();
+    Long max();
+
 }

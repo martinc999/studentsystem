@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class StudentConsoleComponent implements CommandLineRunner {
+public class StudentConsole implements CommandLineRunner {
     private final StudentRepository repository;
 
     @Autowired
-    public StudentConsoleComponent(StudentRepository repository) {
+    public StudentConsole(StudentRepository repository) {
         this.repository = repository;
     }
 
@@ -41,16 +41,17 @@ public class StudentConsoleComponent implements CommandLineRunner {
     private void insertStudents() {
         Student student = new Student();
 
-        for (long i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             student.setId(i);
             student.setAddress("Student" + i);
             student.setName("Name_" + i);
-            studentService.saveStudent(student);
+            studentService.save(student);
         }
         log.info("Test ------------");
 
     }
     private void retrieveStudentsStats() {
+
         log.info("max={}, min={}",studentService.max(), studentService.min());
     }
 

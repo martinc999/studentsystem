@@ -15,11 +15,11 @@ import java.sql.Timestamp;
 
 @Component
 @Slf4j
-public class CourseConsoleComponent implements CommandLineRunner {
+public class CourseConsole implements CommandLineRunner {
     private final CourseRepository repository;
 
     @Autowired
-    public CourseConsoleComponent(CourseRepository repository) {
+    public CourseConsole(CourseRepository repository) {
         this.repository = repository;
     }
 
@@ -47,7 +47,7 @@ public class CourseConsoleComponent implements CommandLineRunner {
     private void insertCourses() {
         Course course = new Course();
 
-        for (long i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             course.setId(i);
             course.setName("Name_" + i);
             course.setDescription("Description_" + i);

@@ -9,10 +9,10 @@ import java.util.*;
 public class Faculty {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
     private String description;
-    private java.sql.Timestamp creation_dt;
+    private java.sql.Timestamp creationDt;
 
     @OneToMany(
             mappedBy = "faculty",
@@ -24,11 +24,11 @@ public class Faculty {
     public Faculty() {
     }
 
-    public Faculty(Long id, String name, String description, Timestamp creation_dt) {
+    public Faculty(Integer id, String name, String description, Timestamp creation_dt) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.creation_dt = creation_dt;
+        this.creationDt = creation_dt;
     }
 
     @Override
@@ -44,11 +44,11 @@ public class Faculty {
         return Objects.hash(id);
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -68,12 +68,12 @@ public class Faculty {
         this.description = description;
     }
 
-    public Timestamp getCreation_dt() {
-        return creation_dt;
+    public Timestamp getCreationDt() {
+        return creationDt;
     }
 
-    public void setCreation_dt(Timestamp creation_dt) {
-        this.creation_dt = creation_dt;
+    public void setCreationDt(Timestamp creationDt) {
+        this.creationDt = creationDt;
     }
 
     public List<FacultyCourse> getPosts() {

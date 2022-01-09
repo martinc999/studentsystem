@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
     private String address;
 
@@ -24,7 +24,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(Long id, String name, String address) {
+    public Student(Integer id, String name, String address) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -43,11 +43,11 @@ public class Student {
         return Objects.hash(id);
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -65,5 +65,11 @@ public class Student {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String toString() {
+        return this.id + " " +
+                this.name + " " +
+                this.address;
     }
 }

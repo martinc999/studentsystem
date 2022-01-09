@@ -1,6 +1,8 @@
 package com.mcichosz.studentsystem.model;
 
 import javax.persistence.*;
+import javax.xml.transform.sax.SAXSource;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Objects;
 
@@ -19,16 +21,16 @@ public class StudentCourse {
     @MapsId("courseId")
     private Course course;
 
-    @Column(name = "created_on")
-    private Date createdOn = new Date();
+    @Column(name = "creation_dt")
+    private Timestamp creationDt = new Timestamp(System.currentTimeMillis());
 
     private StudentCourse() {}
 
-    public StudentCourse(StudentCourseId id, Student student, Course course, Date createdOn) {
+    public StudentCourse(StudentCourseId id, Student student, Course course, Timestamp creationDt) {
         this.id = id;
         this.student = student;
         this.course = course;
-        this.createdOn = createdOn;
+        this.creationDt = creationDt;
     }
 
     //Getters and setters omitted for brevity
@@ -41,12 +43,44 @@ public class StudentCourse {
             return false;
 
         StudentCourse that = (StudentCourse) o;
-        return Objects.equals(student, that.student) &&
-                Objects.equals(course, that.course);
+        return Objects.equals(student.getId(), that.student.getId()) &&
+                Objects.equals(course.getId(), that.course.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(student, course);
+        return Objects.hash(student.getId(), course.getId());
+    }
+
+    public StudentCourseId getId() {
+        return id;
+    }
+
+    public void setId(StudentCourseId id) {
+        this.id = id;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Timestamp getCreationDt() {
+        return creationDt;
+    }
+
+    public void setCreationDt(Timestamp creationDt) {
+        this.creationDt = creationDt;
     }
 }

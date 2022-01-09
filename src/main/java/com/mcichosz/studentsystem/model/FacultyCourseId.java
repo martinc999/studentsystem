@@ -9,14 +9,14 @@ import java.util.Objects;
 public class FacultyCourseId  implements Serializable {
 
     @Column(name = "faculty_id")
-    private Long facultyId;
+    private Integer facultyId;
 
     @Column(name = "course_id")
-    private Long courseId;
+    private Integer courseId;
 
     private FacultyCourseId() {}
 
-    public FacultyCourseId(Long facultyId, Long courseId) {
+    public FacultyCourseId(Integer facultyId, Integer courseId) {
         this.facultyId = facultyId;
         this.courseId = courseId;
     }

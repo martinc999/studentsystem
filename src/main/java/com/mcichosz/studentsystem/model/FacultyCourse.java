@@ -1,4 +1,7 @@
 package com.mcichosz.studentsystem.model;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.*;
 import java.util.Date;
@@ -16,19 +19,28 @@ public class FacultyCourse {
     private Faculty faculty;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
     @MapsId("courseId")
     private Course course;
 
-    @Column(name = "created_on")
-    private Date createdOn = new Date();
+    @Column(name = "creation_dt")
+    private Date creationDt = new Date();
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
 
     private FacultyCourse() {}
 
-    public FacultyCourse(FacultyCourseId id, Faculty faculty, Course course, Date createdOn) {
+    public FacultyCourse(FacultyCourseId id, Faculty faculty, Course course, Date creationDt) {
         this.id = id;
         this.faculty = faculty;
         this.course = course;
-        this.createdOn = createdOn;
+        this.creationDt = creationDt;
     }
 
     //Getters and setters omitted for brevity

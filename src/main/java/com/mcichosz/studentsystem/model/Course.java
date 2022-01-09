@@ -9,7 +9,7 @@ import java.util.*;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
     private String description;
     private java.sql.Timestamp creation_dt;
@@ -31,7 +31,7 @@ public class Course {
     public Course() {
     }
 
-    public Course(Long id, String name, String description, Timestamp creation_dt) {
+    public Course(Integer id, String name, String description, Timestamp creation_dt) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -55,11 +55,11 @@ public class Course {
         return Objects.hash(id);
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -102,4 +102,13 @@ public class Course {
     public void setCourse2(List<StudentCourse> course2) {
         this.course2 = course2;
     }
+
+    public String toString() {
+        return this.id +
+                " " +
+                this.name +
+                " " +
+                this.description;
+    }
+
 }

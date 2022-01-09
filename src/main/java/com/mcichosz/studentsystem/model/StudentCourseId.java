@@ -9,14 +9,14 @@ import java.util.Objects;
 public class StudentCourseId implements Serializable {
 
     @Column(name = "student_id")
-    private Long studentId;
+    private Integer studentId;
 
     @Column(name = "course_id")
-    private Long courseId;
+    private Integer courseId;
 
     private StudentCourseId() {}
 
-    public StudentCourseId(Long studentId, Long courseId) {
+    public StudentCourseId(Integer studentId, Integer courseId) {
         this.studentId = studentId;
         this.courseId = courseId;
     }
@@ -40,19 +40,19 @@ public class StudentCourseId implements Serializable {
         return Objects.hash(studentId, courseId);
     }
 
-    public Long getStudentId() {
+    public Integer getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(Long studentId) {
+    public void setStudentId(Integer studentId) {
         this.studentId = studentId;
     }
 
-    public Long getCourseId() {
+    public Integer getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(Long courseId) {
+    public void setCourseId(Integer courseId) {
         this.courseId = courseId;
     }
 }

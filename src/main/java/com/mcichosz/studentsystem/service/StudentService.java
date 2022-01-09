@@ -6,10 +6,10 @@ import java.util.List;
 
 
 public interface StudentService {
-    Student saveStudent(Student student);
+    Student save(Student student);
     List<Student> getAllStudents();
-    Long min();
-    Long max();
+    Integer min();
+    Integer max();
     void deleteAll();
 
     Long count();

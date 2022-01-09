@@ -4,7 +4,6 @@ import com.mcichosz.studentsystem.model.Student;
 import com.mcichosz.studentsystem.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class StudentController {
     @PostMapping("/add")
     public String add(@RequestBody Student student) {
 
-        studentService.saveStudent(student);
+        studentService.save(student);
         return "New student is added";
     }
     @GetMapping("/all")

@@ -14,7 +14,7 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    public Student saveStudent(Student student) {
+    public Student save(Student student) {
         return studentRepository.save(student);
     }
 
@@ -24,12 +24,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Long min() {
+    public Integer min() {
         return studentRepository.min();
     }
 
     @Override
-    public Long max() {
+    public Integer max() {
         return studentRepository.max();
     }
 

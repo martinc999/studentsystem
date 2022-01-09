@@ -19,7 +19,7 @@ public class Student {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<StudentCourse> posts = new ArrayList<>();
+    private List<StudentCourse> courses = new ArrayList<>();
 
     public Student() {
     }

@@ -19,14 +19,14 @@ public class Course {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<FacultyCourse> course1 = new ArrayList<>();
+    private List<FacultyCourse> faculties = new ArrayList<>();
 
     @OneToMany(
             mappedBy = "course",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<StudentCourse> course2 = new ArrayList<>();
+    private List<StudentCourse> students = new ArrayList<>();
 
     public Course() {
     }
@@ -87,20 +87,20 @@ public class Course {
         this.creation_dt = creation_dt;
     }
 
-    public List<FacultyCourse> getCourse1() {
-        return course1;
+    public List<FacultyCourse> getFaculties() {
+        return faculties;
     }
 
-    public void setCourse1(List<FacultyCourse> course1) {
-        this.course1 = course1;
+    public void setFaculties(List<FacultyCourse> faculties) {
+        this.faculties = faculties;
     }
 
-    public List<StudentCourse> getCourse2() {
-        return course2;
+    public List<StudentCourse> getStudents() {
+        return students;
     }
 
-    public void setCourse2(List<StudentCourse> course2) {
-        this.course2 = course2;
+    public void setStudents(List<StudentCourse> students) {
+        this.students = students;
     }
 
     public String toString() {

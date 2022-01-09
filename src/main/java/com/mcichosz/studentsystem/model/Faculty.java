@@ -19,7 +19,7 @@ public class Faculty {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<FacultyCourse> posts = new ArrayList<>();
+    private List<FacultyCourse> courses = new ArrayList<>();
 
     public Faculty() {
     }
@@ -76,12 +76,12 @@ public class Faculty {
         this.creationDt = creationDt;
     }
 
-    public List<FacultyCourse> getPosts() {
-        return posts;
+    public List<FacultyCourse> getCourses() {
+        return courses;
     }
 
-    public void setPosts(List<FacultyCourse> posts) {
-        this.posts = posts;
+    public void setCourses(List<FacultyCourse> courses) {
+        this.courses = courses;
     }
 
     public String toString() {

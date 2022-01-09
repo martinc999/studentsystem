@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public interface StudentCourseService {
-    StudentCourse saveStudentCourseRel(StudentCourse studentCourse);
+    StudentCourse save(StudentCourse studentCourse);
 
     List<StudentCourse> getAllStudentCourse();
     void refresh() throws Exception;

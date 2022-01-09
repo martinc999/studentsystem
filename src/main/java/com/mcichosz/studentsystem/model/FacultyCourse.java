@@ -61,4 +61,28 @@ public class FacultyCourse {
     public int hashCode() {
         return Objects.hash(faculty, course);
     }
+
+    public FacultyCourseId getId() {
+        return id;
+    }
+
+    public void setId(FacultyCourseId id) {
+        this.id = id;
+    }
+
+    public Faculty getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
+    }
+
+    public Date getCreationDt() {
+        return creationDt;
+    }
+
+    public void setCreationDt(Date creationDt) {
+        this.creationDt = creationDt;
+    }
 }

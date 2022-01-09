@@ -24,11 +24,11 @@ public class Faculty {
     public Faculty() {
     }
 
-    public Faculty(Integer id, String name, String description, Timestamp creation_dt) {
+    public Faculty(Integer id, String name, String description, Timestamp creationDt) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.creationDt = creation_dt;
+        this.creationDt = creationDt;
     }
 
     @Override
@@ -82,5 +82,9 @@ public class Faculty {
 
     public void setPosts(List<FacultyCourse> posts) {
         this.posts = posts;
+    }
+
+    public String toString() {
+        return this.id + " " + this.name + " " + this.description + " " + this.creationDt;
     }
 }

@@ -13,7 +13,7 @@ public class CourseServiceImpl implements CourseService {
     private CourseRepository courseRepository;
 
     @Override
-    public Course addCourse(Course course) {
+    public Course save(Course course) {
         return courseRepository.save(course);
     }
 

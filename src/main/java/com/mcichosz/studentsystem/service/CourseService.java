@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public interface CourseService {
-    Course addCourse(Course course);
+    Course save(Course course);
     List<Course> getAllCourses();
     void deleteAll();
     Long count();

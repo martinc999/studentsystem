@@ -21,22 +21,6 @@ import java.util.List;
 @Component
 @Slf4j
 public class StudentCourseConsole implements CommandLineRunner {
-    private final StudentCourseRepository studentCourseRepository;
-    private final StudentRepository studentRepository;
-    private final CourseRepository courseRepository;
-
-    @Autowired
-    public StudentCourseConsole(StudentCourseRepository studentCourseRepository, StudentRepository studentRepository, CourseRepository courseRepository) {
-        this.studentCourseRepository = studentCourseRepository;
-        this.studentRepository = studentRepository;
-        this.courseRepository = courseRepository;
-    }
-
-    @Autowired
-    private StudentService studentService;
-
-    @Autowired
-    private CourseService courseService;
 
     @Autowired
     private StudentCourseService studentCourseService;

@@ -1,11 +1,8 @@
 package com.mcichosz.studentsystem.console;
 
 import com.mcichosz.studentsystem.model.Course;
-import com.mcichosz.studentsystem.model.Student;
 import com.mcichosz.studentsystem.repository.CourseRepository;
-import com.mcichosz.studentsystem.repository.StudentRepository;
 import com.mcichosz.studentsystem.service.CourseService;
-import com.mcichosz.studentsystem.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -52,7 +49,7 @@ public class CourseConsole implements CommandLineRunner {
             course.setName("Name_" + i);
             course.setDescription("Description_" + i);
             course.setCreation_dt(new Timestamp(System.currentTimeMillis()));
-            courseService.addCourse(course);
+            courseService.save(course);
         }
         log.info("Test ------------");
 

@@ -1,5 +1,7 @@
 package com.mcichosz.studentsystem.model;
 
+import lombok.Getter;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
@@ -38,5 +40,21 @@ public class FacultyCourseId  implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(facultyId, courseId);
+    }
+
+    public Integer getFacultyId() {
+        return facultyId;
+    }
+
+    public void setFacultyId(Integer facultyId) {
+        this.facultyId = facultyId;
+    }
+
+    public Integer getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
     }
 }

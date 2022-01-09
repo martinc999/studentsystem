@@ -11,6 +11,5 @@ public interface StudentService {
     Integer min();
     Integer max();
     void deleteAll();
-
     Long count();
 }

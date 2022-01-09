@@ -40,7 +40,7 @@ public class StudentCourseServiceImpl implements StudentCourseService {
     private StudentCourseService studentCourseService;
 
     @Override
-    public StudentCourse saveStudentCourseRel(StudentCourse studentCourse) {
+    public StudentCourse save(StudentCourse studentCourse) {
         return studentCourseRepository.save(studentCourse);
     }
 
@@ -65,7 +65,7 @@ public class StudentCourseServiceImpl implements StudentCourseService {
                 //all the classes: Course, Lesson, Progress and User have the toString() overridden with the database ID;
                 log.info("Student: {} Course: {} ",s.toString(),c.toString());
                 StudentCourse studentCourse = new StudentCourse(new StudentCourseId(s.getId(), c.getId()), s, c, new Timestamp(System.currentTimeMillis()));
-                studentCourseService.saveStudentCourseRel(studentCourse);
+                studentCourseService.save(studentCourse);
 
             }
             List<StudentCourse> studentCourses = studentCourseService.getAllStudentCourse();

@@ -48,7 +48,7 @@ public class CourseConsole implements CommandLineRunner {
             course.setId(i);
             course.setName("Name_" + i);
             course.setDescription("Description_" + i);
-            course.setCreation_dt(new Timestamp(System.currentTimeMillis()));
+            course.setCreationDt(new Timestamp(System.currentTimeMillis()));
             courseService.save(course);
         }
         log.info("Test ------------");

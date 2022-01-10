@@ -12,7 +12,7 @@ public class Course {
     private Integer id;
     private String name;
     private String description;
-    private java.sql.Timestamp creation_dt;
+    private java.sql.Timestamp creationDt;
 
     @OneToMany(
             mappedBy = "course",
@@ -31,11 +31,11 @@ public class Course {
     public Course() {
     }
 
-    public Course(Integer id, String name, String description, Timestamp creation_dt) {
+    public Course(Integer id, String name, String description, Timestamp creationDt) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.creation_dt = creation_dt;
+        this.creationDt = creationDt;
     }
 
 
@@ -79,12 +79,12 @@ public class Course {
         this.description = description;
     }
 
-    public Timestamp getCreation_dt() {
-        return creation_dt;
+    public Timestamp getCreationDt() {
+        return creationDt;
     }
 
-    public void setCreation_dt(Timestamp creation_dt) {
-        this.creation_dt = creation_dt;
+    public void setCreationDt(Timestamp creationDt) {
+        this.creationDt = creationDt;
     }
 
     public List<FacultyCourse> getFaculties() {

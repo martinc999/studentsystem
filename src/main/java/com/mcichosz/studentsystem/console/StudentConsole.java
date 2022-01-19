@@ -6,11 +6,14 @@ import com.mcichosz.studentsystem.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @Slf4j
+@Order(1)
 public class StudentConsole implements CommandLineRunner {
+
     private final StudentRepository repository;
 
     @Autowired
